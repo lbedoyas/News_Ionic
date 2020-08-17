@@ -1,0 +1,23 @@
+
+  <ion-card color="dark">
+    <ion-card-header>
+      <ion-card-subtitle>
+        <span class="text-primary">{{Contador + 1}}.  </span>
+        <span class="noticia-source-name">{{Noticia.source.name}}</span>
+
+          <div class="noticia-more"> 
+            <ion-button fill="clear" (click)="lanzarMenu()"></ion-button>
+            <ion-icon slot="icon-only" name="ellipsis-vertical-outline"></ion-icon>
+          </div>
+
+      </ion-card-subtitle>
+      <ion-card-title (click)="abrirNoticia()">{{Noticia.title}}</ion-card-title>
+    </ion-card-header>
+    <ion-img *ngIf="Noticia.urlToImage"  [src]="Noticia.urlToImage" (click)="abrirNoticia()" class="animated fadeIn fast"></ion-img>
+    <ion-card-content>
+      <p>
+        {{Noticia.description}}
+      </p>
+    </ion-card-content>
+  </ion-card>
+
